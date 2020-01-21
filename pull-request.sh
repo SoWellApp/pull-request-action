@@ -125,7 +125,7 @@ main () {
             # Pull request body (optional)
             if [ -z "${PULL_REQUEST_BODY}" ]; then
                 echo "No pull request body is set, will use default."
-                PULL_REQUEST_BODY=$(sed 's/[^0-9]*//g'<<<"${BRANCH}")
+                PULL_REQUEST_BODY="Closes #$(sed 's/[^0-9]*//g'<<<"${BRANCH}")"
             fi
             echo "Pull request body is ${PULL_REQUEST_BODY}"
 
